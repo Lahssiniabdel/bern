@@ -13,11 +13,11 @@ import os
 import threading
 import time
 
-from biobert_ner.modeling import *
-from biobert_ner.tokenization import *
-from biobert_ner.ops import *
-from biobert_ner.utils import Profile, show_prof_data
-from biobert_ner.fast_predict2 import FastPredict
+from modeling import *
+from tokenization import *
+from ops import *
+from utils import Profile, show_prof_data
+from fast_predict2 import FastPredict
 from convert import preprocess
 
 
@@ -462,7 +462,7 @@ class BioBERT:
         else:
             raise ValueError('Wrong type')
 
-        token_path = os.path.join("biobert_ner", "tmp",
+        token_path = os.path.join("tmp",
                                   "token_test_{}.txt".format(req_id))
 
         if os.path.exists(token_path):
@@ -849,7 +849,7 @@ class BioBERT:
     @staticmethod
     def write_tokens(tokens, mode, req_id):
         if mode == "test":
-            path = os.path.join("biobert_ner", "tmp",
+            path = os.path.join("tmp",
                                 "token_{}_{}.txt".format(mode, req_id))
             with open(path, 'a') as wf:
                 for token in tokens:

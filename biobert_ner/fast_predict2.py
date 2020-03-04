@@ -14,8 +14,7 @@
  """
 import tensorflow as tf
 import threading
-from biobert_ner.utils import Profile
-
+from utils import Profile
 
 class FastPredict:
 
